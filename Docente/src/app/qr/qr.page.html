@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      <img src="/assets/bane.jpg" alt="Logo">
+    </ion-title>
+    <ion-back-button defaultHref="/generarqr" color="secondary" slot="start" text=""></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row justify-content-center align-items-center class="ion-align-items-center ion-justify-content-center">
+    <ion-col size="12" size-md="6">
+      <ion-card>
+        <ion-card-header class="ion-text-center">
+          <ion-title>¡Bienvenidos!</ion-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+          <p>Escanea el código QR para registrar tu asistencia.</p>
+          <qrcode [qrdata]="dato" [width]="400"></qrcode>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content>
+  <ion-card>
+    <ion-card-content style="padding-bottom: 20%; padding-top: 20%;">
+      <form [formGroup]="loginForm" novalidate>
+        <!-- Imagen -->
+        <div class="logo-container">
+          <img class="logo-img" src="/assets/logo-removebg-preview.png">
+        </div>
+
+        <!-- Credenciales -->
+        <div class="credentials-container">
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input formControlName="email" placeholder="UsuarioAlumno@duocuc.cl"></ion-input>
+            <ion-icon name="person"></ion-icon>
+          </ion-item>
+
+          <div *ngIf="loginForm.controls?.['email'].touched && loginForm.controls?.['email'].invalid">
+            <ion-text *ngIf="loginForm.controls['email'].hasError('required')">
+              Email requerido
+            </ion-text>
+            <ion-text *ngIf="loginForm.get('email')?.hasError('pattern')">
+              El formato del correo electrónico no es válido
+            </ion-text>
+          </div>
+
+          <ion-item class="password-container">
+            <ion-label>Contraseña</ion-label>
+            <ion-input formControlName="password" type="password" placeholder="*********"></ion-input>
+            <ion-icon name="lock-closed"></ion-icon>
+          </ion-item>
+
+          <div *ngIf="loginForm.get('password').touched">
+            <ion-text *ngIf="loginForm.get('password').hasError('required')">
+              Contraseña requerida
+            </ion-text>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="forgot-password">
+          <a [routerLink]="['/reset-password']">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="register-link">
+          <a [routerLink]="['/registro']">Registrate aquí</a>
+        </div>
+        <br>
+
+        <ion-fab vertical="bottom" horizontal="end" class="login-fab">
+          <ion-fab-button (click)="login()">
+            <ion-icon name="chevron-forward"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

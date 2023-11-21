@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button (click)="alumnoMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: light;">Ayuda</ion-title>
+    <ion-back-button defaultHref="/alumnomenu" color="secondary" slot="start" text=""></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  <ion-card>
+    <ion-card-content>
+      <ion-card-header>
+        <ion-card-subtitle>Para registrar tu asistencia en la clase sigue los siguientes pasos:</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-title style="text-align: center;">Alumno</ion-card-title>
+      <br>
+      <p>1.- Al abrir la Aplicación deberás seleccionar el tipo de usuario que te corresponda, en este caso debes elegir "Alumno"</p>
+      <p>2.- Una vez seleccionado el tipo de usuario deberás ingresar con tus credenciales.</p>
+      <p> Ejemplo:</p>
+      <p> Usuario: ejemplo@duocuc.cl</p>
+      <p> Contraseña: contraseña123</p>
+      <p>3.- Selecciona la opción QR asistencia.</p>
+      <p>4.- A continuación deberás usar la cámara para escanear el código QR, una vez posicionado el teléfono debes presionar el botón "Escanear código":</p>
+      <p>5.- Siguiendo estos pasos tu asistencia quedará registrada.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">¿Quiénes Somos?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      "Somos un grupo de apasionados alumnos comprometidos con el desarrollo y el progreso de nuestra institución. Nuestra misión es brindar soluciones tecnológicas que faciliten y mejoren la gestión de asistencias y registros en el entorno educativo. Trabajamos incansablemente para diseñar y desarrollar aplicaciones que simplifiquen la toma de asistencias, permitiendo a nuestros docentes y personal administrativo concentrarse en lo más importante: la educación. Con nuestro compromiso y experiencia, estamos decididos a contribuir al éxito y la eficiencia de nuestra querida institución."
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; font-size: small;">@RegistrApp Suazo-Ulloa</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      <img src="/assets/bane.jpg" alt="Logo">
+    </ion-title>
+    <ion-back-button defaultHref="/generarqr" color="secondary" slot="start" text=""></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  
+  <ion-list *ngIf="datos$ | async as datos">
+    <ng-container *ngFor="let documento of datos">
+      <div class="custom-list" *ngIf="documento.docente === user?.data.fullname">             
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ documento.asignatura }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li><strong>Nombre:</strong> {{ documento.fullname }}</li>
+              <li><strong>Fecha:</strong> {{ documento.fecha }}</li>
+              <li><strong>Asignatura:</strong> {{ documento.asignatura }}</li>
+              <li><strong>Docente:</strong> {{ documento.docente }}</li>
+              <li><strong>Sala:</strong> {{ documento.sala }}</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ng-container>
+  </ion-list>
+  <div *ngIf="!(datos$ | async)?.length" class="ion-text-center no-data-message">
+    No se encontraron datos en la colección especificada.
+  </div>
+  
+</ion-content>

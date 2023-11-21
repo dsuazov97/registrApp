@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"  slot="start"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+        <form [formGroup]="regForm" novalidate>
+          <!-- Imagen -->
+          <div class="logo-container">
+            <img class="logo-img" src="/assets/bane.jpg">
+          </div>
+
+          <!-- Credenciales -->
+          <div class="credentials-container">
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="person" slot="start" style="font-size: 1rem;"></ion-icon>
+                Nombre
+              </ion-label>
+              <ion-input formControlName="fullname" placeholder="nombre"></ion-input>
+            </ion-item>
+            <div *ngIf="regForm.controls?.['fullname'].touched && regForm.controls?.['fullname'].invalid">
+              <ion-text *ngIf="regForm.controls['fullname'].hasError('required')">
+                Nombre requerido
+              </ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>
+                <ion-icon name="mail" slot="start" style="font-size: 1rem;"></ion-icon>
+                Email
+              </ion-label>
+              <ion-input formControlName="email" placeholder="correoprofe@duocuc.cl"></ion-input>
+            </ion-item>
+            <div *ngIf="regForm.controls?.['email'].touched && regForm.controls?.['email'].invalid">
+              <ion-text *ngIf="regForm.controls['email'].hasError('required')">
+                Email requerido
+              </ion-text>
+              <ion-text *ngIf="regForm.get('email')?.hasError('pattern')">
+                El formato del correo electrónico no es válido
+              </ion-text>
+            </div>
+            
+            <ion-item>
+              <ion-label>
+                <ion-icon name="lock-closed" slot="start" style="font-size: 1rem;"></ion-icon>
+                Contraseña
+              </ion-label>
+              <ion-input formControlName="password" type="text" placeholder="contraseña"></ion-input>
+            </ion-item>
+            <div *ngIf="regForm.controls?.['password'].touched && regForm.controls?.['password'].invalid">
+              <ion-text *ngIf="regForm.controls['password'].hasError('required')">
+                Contraseña requerida
+              </ion-text>
+              <ion-text *ngIf="regForm.get('password')?.hasError('pattern')">
+                <ul>
+                  <li>La contraseña debe tener al menos:</li>
+                  <li>8 dígitos</li>
+                  <li>Un número</li>
+                  <li>Un carácter</li>
+                  <li>Una mayúscula</li>
+                  <li>Una minúscula</li>
+                </ul>
+              </ion-text>
+            </div>
+
+            <ion-item>
+              <ion-label>
+              <ion-icon name="call" slot="start" style="font-size: 1rem;"></ion-icon>
+                Número
+              </ion-label>
+              <ion-input formControlName="numero" placeholder="12345678"></ion-input>
+            </ion-item>
+            <div *ngIf="regForm.controls?.['numero'].touched && regForm.controls?.['numero'].invalid">
+              <ion-text *ngIf="regForm.controls['numero'].hasError('required')">
+                Numero requerido
+              </ion-text>
+              <ion-text *ngIf="regForm.get('numero')?.hasError('pattern')">
+                El formato del numero de telefono no es valido
+              </ion-text>
+            </div>
+
+            <ion-item>
+              <ion-select formControlName="cuenta" placeholder="Selecciona un rol">
+                <ion-select-option value="Profesor">
+                  <ion-icon name="school" slot="start"></ion-icon> Profesor
+                </ion-select-option>
+                <ion-select-option value="Estudiante">
+                  <ion-icon name="person" slot="start"></ion-icon> Estudiante
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            
+          </div>
+
+          <br>
+
+          <ion-fab vertical="bottom" horizontal="end" class="login-fab">
+            <ion-fab-button (click)="signUp()">
+              <ion-icon name="chevron-forward"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </form>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
+

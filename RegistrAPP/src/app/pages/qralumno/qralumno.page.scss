@@ -1,0 +1,18 @@
+.exit-button {
+    --background: linear-gradient(to right, #FFD700, #FFA500);
+    --border-radius: 10px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --color: #ffffff;
+    ion-icon {
+      --color: #ffffff;
+    }
+    &:hover,
+    &:focus {
+      --background: linear-gradient(to right, #FFA500, #FFD700);
+    }
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .scanner-card {
+    margin-bottom: 20px; /* Ajusta el espacio entre la tarjeta del scanner y la tarjeta de información */
+  }

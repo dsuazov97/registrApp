@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/alumnomenu" color="secondary" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: light;">Información de Cuenta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="alumnoMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="usuarioActual">
+    <!-- UID del usuario -->
+    <div class="uid-container ion-text-center">
+      <ion-label class="uid-label">UID del Usuario</ion-label>
+      <ion-item class="uid-item" style="text-align: center;">
+        <ion-input disabled value="{{ uid }}" class="uid-input"></ion-input>
+      </ion-item>
+    </div>
+
+    <!-- Información actual del usuario -->
+    <ion-card class="info-card">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked" class="info-label">Nombre</ion-label>
+          <ion-input disabled value="{{ usuarioActual.fullname }}" class="info-input"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" class="info-label">Email</ion-label>
+          <ion-input disabled value="{{ usuarioActual.email }}" class="info-input"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" class="info-label">Número actual</ion-label>
+          <ion-input disabled value="{{ usuarioActual.numero }}" class="info-input"></ion-input>
+        </ion-item>
+
+        <!-- Tipo de cuenta -->
+        <ion-item>
+          <ion-label position="stacked" class="info-label">Tipo de Cuenta</ion-label>
+          <ion-input disabled value="{{ usuarioActual.cuenta }}" class="info-input"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    <ion-card class="modify-card">
+      <ion-card-header>
+        <ion-card-title class="modify-title">Modificar Datos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Sección para modificar solo el número -->
+        <ion-item class="modify-item">
+          <ion-label position="stacked" class="info-label">Nuevo Número</ion-label>
+          <ion-input type="number" [(ngModel)]="nuevoNumero" class="info-input"></ion-input>
+          <ion-button slot="end" class="modify-button" (click)="actualizarNumero()">Actualizar</ion-button>
+        </ion-item>
+    
+        <!-- Sección para cambiar la contraseña -->
+        <ion-item class="modify-item">
+          <ion-label position="stacked" class="info-label">Nueva Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="nuevaContrasena" class="info-input"></ion-input>
+          <ion-button slot="end" class="modify-button" (click)="cambiarContrasena()">Cambiar</ion-button>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="full" class="exit-button" (click)="irAlumnoMenu()" [routerLink]="'/alumnomenu'">
+      <ion-icon name="exit-outline" slot="start"></ion-icon>
+      Salir sin Cambios
+    </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; font-size: small;">@RegistrApp Suazo-Ulloa</ion-title>
+  </ion-toolbar>
+</ion-footer>

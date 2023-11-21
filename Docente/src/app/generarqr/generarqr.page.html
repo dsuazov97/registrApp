@@ -1,0 +1,64 @@
+<ion-header>
+  <img src="/assets/bane.jpg" alt="">
+  <ion-title class="ion-text-center" style="color: light;">
+    {{ user?.data.cuenta || 'Usuario' }} | {{ user?.data.fullname || 'Usuario' }}
+  </ion-title>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  <ion-row>
+    <!-- Columna para el ion-datetime -->
+    <ion-col>
+      <ion-card>
+        <ion-card-content style="display: flex; justify-content: center; align-items: center;">
+          <ion-datetime style="border-radius: 40px;"></ion-datetime>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Columna para el ion-radio-group -->
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-title style="color: white;">Seleccione su asignatura:</ion-title>
+          <ion-list style="border-radius: 40px; color-scheme: white;">
+            <ion-radio-group  [(ngModel)]="asignatura" (ionChange)="updateButtonState()">
+              <ion-item>
+                <ion-label>Programación móvil</ion-label>
+                <ion-radio slot="end" [value]="user?.data.fullname + ',111,Programacion Mobile'"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Programación BDD</ion-label>
+                <ion-radio slot="end" [value]="user?.data.fullname + ',423,Programacion BDD'"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Arquitectura</ion-label>
+                <ion-radio slot="end" [value]="user?.data.fullname + ',1313,Arquitectura'"></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Estadística descriptiva</ion-label>
+                <ion-radio slot="end" [value]="user?.data.fullname + ',1100,Estadistica descriptiva'"></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="justify-content: center; padding-top: 20px;">
+    <ion-item>
+      <ion-button size="large" expand="full" color="primary" (click)="enviarDatos()" [disabled]="!asignatura">Generar QR</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button size="large" expand="full" color="primary" href="/asistencia" >Ver Asistencia</ion-button>
+    </ion-item>
+  </ion-row>
+
+  <ion-row style="justify-content: flex-end; padding: 20px;">
+    <ion-button (click)="logout()" color="danger">Cerrar sesión</ion-button>
+  </ion-row>  
+</ion-content>

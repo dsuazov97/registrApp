@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="alumnoMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" style="color: light;">
+      {{ user?.data.cuenta || 'Usuario' }} | {{ user?.data.fullname || 'Usuario' }}
+    </ion-title>
+    <ion-buttons slot="end">
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"> 
+  <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <img src="/assets/pngegg.png" style="max-width: auto; height: auto;">
+  </div>
+  <br>
+  <ion-button style="display: block; margin: 10px auto;" href="/qralumno" color="warning" expand="full">
+    Escanear QR
+  </ion-button>
+  <ion-button style="display: block; margin: 10px auto;" href="/asistencia" color="warning" expand="full">
+    Registro Asistencia
+  </ion-button>
+
+  <ion-card>
+    <ion-card-content>
+      <div class="video-container">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/BwPs0nn3ask" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center" style="color: light; font-size: small;">@RegistrApp Suazo-Ulloa</ion-title>
+  </ion-toolbar>
+</ion-footer>

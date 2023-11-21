@@ -1,0 +1,27 @@
+<ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-menu contentId="alumno" menuId="third" side="start" swipe-gesture="false">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Alumno</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-menu-toggle *ngFor="let a of alumnoMenuItems">
+        <ion-item [routerLink]="a. redirecTo" detail="true">
+            <ion-icon slot="start" [name]="a.icon"></ion-icon>
+            {{ a.name }}
+        </ion-item>
+      </ion-menu-toggle>
+      <br>
+      <ion-button (click)="logout()" expand="block" fill="outline" shape="round">Cerrar Sesión</ion-button>
+      
+  </ion-content>
+
+
+</ion-menu>
+<ion-router-outlet id="alumno"></ion-router-outlet>
+
+
+
+

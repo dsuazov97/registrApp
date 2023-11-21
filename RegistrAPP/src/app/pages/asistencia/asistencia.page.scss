@@ -1,0 +1,41 @@
+ion-title.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  ion-content {
+    padding: 10px;
+  }
+  
+  ion-card {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .document-values {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .document-values li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .value {
+    font-weight: bold;
+  }
+  
+  .no-data-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: gray;
+  }
+  

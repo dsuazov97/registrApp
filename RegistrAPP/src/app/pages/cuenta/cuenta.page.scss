@@ -1,0 +1,20 @@
+.exit-button {
+    --background: linear-gradient(to right, #FFD700, #FFA500); /* Cambia los colores de fondo según tu preferencia */
+    --border-radius: 10px; /* Bordes redondeados */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --color: #ffffff; /* Color del texto */
+  
+    ion-icon {
+      --color: #ffffff; /* Color del icono */
+    }
+  
+    // Agrega animaciones de hover y focus
+    &:hover,
+    &:focus {
+      --background: linear-gradient(to right, #FFA500, #FFD700);
+    }
+  
+    // Agrega animación de transición suave
+    transition: background 0.3s ease-in-out;
+  }
+  

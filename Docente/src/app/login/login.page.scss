@@ -1,0 +1,39 @@
+.input{
+    font-size: 300;
+}
+
+ion-item{
+    --background: #f1f1f1;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.logo-container {
+display: flex;
+justify-content: center;
+}
+
+.logo-img {
+border-radius: 10%;
+background-color: goldenrod;
+}
+
+.credentials-container {
+padding-top: 50px;
+}
+
+.password-container {
+padding-top: 10px;
+}
+
+.forgot-password {
+margin-top: 10px;
+}
+
+.register-link {
+margin-top: 10px;
+}
+
+.login-fab {
+margin-bottom: 30px;
+}
